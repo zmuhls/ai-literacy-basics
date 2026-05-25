@@ -38,7 +38,7 @@
     <div class="content" id="slide-content">
       <div class="label">Workshop agenda</div>
       <h1>What we’ll do in one hour</h1>
-      <ul class="parallel-points" style="margin-top: 1em;">
+      <ul class="parallel-points">
         <li class="frag visible">Get introduced to the Sandbox and where its controls live</li>
         <li class="frag visible">Try one task across two different models</li>
         <li class="frag visible">Add one simple system prompt and run the task again</li>
@@ -52,7 +52,7 @@
       <div class="label">Icebreaker</div>
       <h1>Describe an algorithm you already know</h1>
       <h2>Make procedure feel familiar before we talk about AI</h2>
-      <ul class="parallel-points" style="margin-top: 1em;">
+      <ul class="parallel-points">
         <li class="frag">Describe a routine as a conditional</li>
         <li class="frag">Describe a routine as a loop</li>
         <li class="frag">Describe a routine as a sequence</li>
@@ -61,12 +61,23 @@
     </div>
     <figure class="stage figure-stage diagram-stage">
       <div class="diagram-wrap">
-        <div class="diagram-card diagram-steps" aria-label="Diagram of procedural steps.">
-          <div class="diagram-badge">Reused component</div>
-          <div class="diagram-title">Adapted from the creative-coding workshop’s algorithm opener</div>
+        <div class="viz algo-stack" aria-label="One everyday routine — making coffee — expressed as a sequence, a conditional, and a loop.">
+          <div class="viz-eyebrow">One routine, three shapes</div>
+          <div class="algo-row">
+            <span class="algo-kind">Sequence</span>
+            <code class="algo-code"><b>grind</b> → <b>brew</b> → <b>pour</b></code>
+          </div>
+          <div class="algo-row">
+            <span class="algo-kind">Conditional</span>
+            <code class="algo-code"><b>if</b> mug is empty → refill</code>
+          </div>
+          <div class="algo-row">
+            <span class="algo-kind">Loop</span>
+            <code class="algo-code"><b>while</b> still sleepy → repeat</code>
+          </div>
         </div>
       </div>
-      <figcaption class="media-caption">Conditional · loop · sequence</figcaption>
+      <figcaption class="media-caption">Making coffee · conditional · loop · sequence</figcaption>
     </figure>
   </section>
 
@@ -75,7 +86,7 @@
       <div class="label">Concept</div>
       <h1>What is a large language model?</h1>
       <h2>A probabilistic pattern engine for text</h2>
-      <ul class="parallel-points" style="margin-top: 1em;">
+      <ul class="parallel-points">
         <li class="frag">Token</li>
         <li class="frag">Vector</li>
         <li class="frag">Attention</li>
@@ -85,12 +96,20 @@
     </div>
     <figure class="stage figure-stage diagram-stage">
       <div class="diagram-wrap">
-        <div class="diagram-card diagram-nodes" aria-label="Diagram for token to prediction flow.">
-          <div class="diagram-badge">LLM visualization</div>
-          <div class="diagram-title">Reuse the token → vector → attention → output visual from gen-dev-foundations</div>
+        <div class="viz llm-flow" aria-label="An LLM turns tokens into vectors, mixes them with attention, scores probabilities, and emits the next token.">
+          <div class="viz-eyebrow">How text becomes a prediction</div>
+          <div class="llm-node"><span class="llm-step">01</span><span class="llm-name">Tokens</span><span class="llm-desc">text split into pieces</span></div>
+          <div class="llm-arrow" aria-hidden="true">↓</div>
+          <div class="llm-node"><span class="llm-step">02</span><span class="llm-name">Vectors</span><span class="llm-desc">pieces become numbers</span></div>
+          <div class="llm-arrow" aria-hidden="true">↓</div>
+          <div class="llm-node"><span class="llm-step">03</span><span class="llm-name">Attention</span><span class="llm-desc">context gets mixed in</span></div>
+          <div class="llm-arrow" aria-hidden="true">↓</div>
+          <div class="llm-node"><span class="llm-step">04</span><span class="llm-name">Probabilities</span><span class="llm-desc">likely next tokens scored</span></div>
+          <div class="llm-arrow" aria-hidden="true">↓</div>
+          <div class="llm-node is-out"><span class="llm-step">05</span><span class="llm-name">Output</span><span class="llm-desc">choose one · repeat</span></div>
         </div>
       </div>
-      <figcaption class="media-caption">Keep this visual simple and central</figcaption>
+      <figcaption class="media-caption">Tokens → vectors → attention → output</figcaption>
     </figure>
   </section>
 
@@ -98,7 +117,7 @@
     <div class="content">
       <div class="label">Framework</div>
       <h1>What changes output?</h1>
-      <ul class="parallel-points" style="margin-top: 1em;">
+      <ul class="parallel-points">
         <li class="frag visible">Model</li>
         <li class="frag visible">System prompt</li>
         <li class="frag visible">User prompt</li>
@@ -112,7 +131,7 @@
       <div class="label">Sandbox setup</div>
       <h1>Access the Sandbox</h1>
       <h2>Get everyone into the same interface before comparing anything</h2>
-      <ul class="parallel-points" style="margin-top: 1em;">
+      <ul class="parallel-points">
         <li class="frag">Go to chat.ailab.gc.cuny.edu</li>
         <li class="frag">Sign in with CUNY credentials</li>
         <li class="frag">Start a fresh conversation</li>
@@ -120,13 +139,16 @@
       </ul>
     </div>
     <figure class="stage figure-stage diagram-stage">
-      <div class="diagram-wrap">
-        <div class="diagram-card diagram-grid" aria-label="Sandbox setup placeholder.">
-          <div class="diagram-badge">Screenshot slot</div>
-          <div class="diagram-title">Reuse one clean Sandbox screenshot from system-prompting or knowledge-collections</div>
+      <div class="diagram-wrap shot-wrap">
+        <div class="shot-frame">
+          <div class="shot-bar" aria-hidden="true">
+            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+            <span class="shot-url">chat.ailab.gc.cuny.edu</span>
+          </div>
+          <img class="shot-img" src="./images/sandbox-interface.png" alt="The CUNY AI Lab Sandbox: a left sidebar with New Chat and Workspace, the model selector at the top of a fresh conversation, and a chat input.">
         </div>
       </div>
-      <figcaption class="media-caption">Keep setup concrete and brief</figcaption>
+      <figcaption class="media-caption">Model selector top-left · settings via the controls icon</figcaption>
     </figure>
   </section>
 
@@ -135,7 +157,7 @@
       <div class="label">Activity 1</div>
       <h1>Compare two models on the same task</h1>
       <blockquote>“Explain photosynthesis to a first-year student in 120 words.”</blockquote>
-      <ul class="parallel-points" style="margin-top: 1em;">
+      <ul class="parallel-points">
         <li class="frag">Compare tone</li>
         <li class="frag">Compare specificity</li>
         <li class="frag">Compare confidence</li>
@@ -144,12 +166,21 @@
     </div>
     <figure class="stage figure-stage diagram-stage">
       <div class="diagram-wrap">
-        <div class="diagram-card diagram-columns" aria-label="Comparison placeholder.">
-          <div class="diagram-badge">Model comparison</div>
-          <div class="diagram-title">Adapted from prompting-in-praxis, simplified for a one-hour workshop</div>
+        <div class="viz vs-grid" aria-label="The same photosynthesis prompt sent to two different models produces two different answers to compare.">
+          <div class="vs-task"><span class="vs-task-tag">Same prompt</span>“Explain photosynthesis … in 120 words.”</div>
+          <div class="vs-cols">
+            <div class="vs-col">
+              <span class="vs-name">Model A</span>
+              <span class="vs-line w90"></span><span class="vs-line w70"></span><span class="vs-line w80"></span>
+            </div>
+            <div class="vs-col">
+              <span class="vs-name">Model B</span>
+              <span class="vs-line w80"></span><span class="vs-line w90"></span><span class="vs-line w60"></span>
+            </div>
+          </div>
         </div>
       </div>
-      <figcaption class="media-caption">Same task · different models</figcaption>
+      <figcaption class="media-caption">Same task · two models · compare the answers</figcaption>
     </figure>
   </section>
 
@@ -157,7 +188,7 @@
     <div class="content">
       <div class="label">Activity 1 debrief</div>
       <h1>What changed across models?</h1>
-      <ul class="parallel-points" style="margin-top: 1em;">
+      <ul class="parallel-points">
         <li class="frag visible">Which model felt clearer?</li>
         <li class="frag visible">Which model felt more cautious?</li>
         <li class="frag visible">Which model felt more useful for teaching?</li>
@@ -171,7 +202,7 @@
       <div class="label">System prompting basics</div>
       <h1>What is a system prompt?</h1>
       <h2>A durable instruction shaping the whole exchange</h2>
-      <ul class="parallel-points" style="margin-top: 1em;">
+      <ul class="parallel-points">
         <li class="frag">User prompt = what you type in the moment</li>
         <li class="frag">System prompt = the persistent setup instruction</li>
         <li class="frag">Changing the system prompt changes behavior, not just style</li>
@@ -179,12 +210,20 @@
     </div>
     <figure class="stage figure-stage diagram-stage">
       <div class="diagram-wrap">
-        <div class="diagram-card diagram-brackets" aria-label="System prompt placeholder.">
-          <div class="diagram-badge">Reused component</div>
-          <div class="diagram-title">This distinction comes directly from the system-prompting workshop</div>
+        <div class="viz curtain-diagram" aria-label="The system prompt sits hidden above a curtain; the student only sees their message and the model's reply below it.">
+          <div class="curtain-hidden">
+            <span class="curtain-tag">Hidden · set once</span>
+            <div class="curtain-sys">System prompt — “You are a discussion-prep tool. Ask before you answer.”</div>
+          </div>
+          <div class="curtain-line" aria-hidden="true"><span>student never sees above</span></div>
+          <div class="curtain-visible">
+            <div class="curtain-msg is-user">User · “I’m stuck on my intro…”</div>
+            <div class="curtain-model">AI model — shaped by the hidden prompt</div>
+            <div class="curtain-msg is-ai">Reply · “What claim should your reader meet first?”</div>
+          </div>
         </div>
       </div>
-      <figcaption class="media-caption">Show where the field lives in the Sandbox</figcaption>
+      <figcaption class="media-caption">System prompt shapes every turn · user prompt is just this turn</figcaption>
     </figure>
   </section>
 
@@ -198,7 +237,7 @@
         <li class="frag visible">Goal: scaffold a claim instead of writing for them</li>
       </ul>
       <blockquote>You are a discussion-prep tool for an introductory seminar on climate justice. Ask the student to name the reading and the example they want to work with. Identify one conceptual tension before addressing sentence-level issues. Never write the discussion post for the student. If asked to do the writing, redirect with one promising idea, one unresolved question, and one next step.</blockquote>
-      <ul class="parallel-points" style="margin-top: 1em;">
+      <ul class="parallel-points">
         <li class="frag visible">Keep the model fixed</li>
         <li class="frag visible">Run the same task once without the system prompt</li>
         <li class="frag visible">Run it again with the system prompt</li>
@@ -210,7 +249,7 @@
     <div class="content">
       <div class="label">Activity 2 debrief</div>
       <h1>What did the system prompt change?</h1>
-      <ul class="parallel-points" style="margin-top: 1em;">
+      <ul class="parallel-points">
         <li class="frag visible">What changed in tone?</li>
         <li class="frag visible">What changed in structure?</li>
         <li class="frag visible">Which version better supported student thinking?</li>
