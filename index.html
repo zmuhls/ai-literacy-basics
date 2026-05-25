@@ -140,15 +140,34 @@
     </div>
     <figure class="stage figure-stage diagram-stage">
       <div class="diagram-wrap shot-wrap">
-        <div class="shot-frame">
-          <div class="shot-bar" aria-hidden="true">
-            <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
-            <span class="shot-url">chat.ailab.gc.cuny.edu</span>
+        <div class="shot-carousel" data-interval="5000" aria-roledescription="carousel" aria-label="Sandbox interface tour">
+          <div class="shot-stage">
+            <div class="shot-slide is-active" role="group" aria-label="1 of 2: Model selector">
+              <div class="shot-frame">
+                <div class="shot-bar" aria-hidden="true">
+                  <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+                  <span class="shot-url">chat.ailab.gc.cuny.edu</span>
+                </div>
+                <img class="shot-img" src="./images/sandbox-model-selector.png" alt="The Sandbox model selector open at the top-left, listing models including Gemma, GPT-OSS, Qwen, Kimi-K2.5, DeepSeek and GLM-5.">
+              </div>
+            </div>
+            <div class="shot-slide" role="group" aria-label="2 of 2: Controls and system prompt">
+              <div class="shot-frame">
+                <div class="shot-bar" aria-hidden="true">
+                  <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+                  <span class="shot-url">chat.ailab.gc.cuny.edu</span>
+                </div>
+                <img class="shot-img" src="./images/sandbox-controls.png" alt="The Controls panel opened from the controls icon, showing the System Prompt field above the advanced parameters.">
+              </div>
+            </div>
           </div>
-          <img class="shot-img" src="./images/sandbox-interface.png" alt="The CUNY AI Lab Sandbox: a left sidebar with New Chat and Workspace, the model selector at the top of a fresh conversation, and a chat input.">
+          <div class="shot-dots" role="tablist" aria-label="Choose a screenshot">
+            <button class="shot-pip is-active" type="button" data-cap="1 · Model selector, top-left" aria-label="Model selector" aria-selected="true"></button>
+            <button class="shot-pip" type="button" data-cap="2 · Settings via the controls icon" aria-label="Controls and system prompt" aria-selected="false"></button>
+          </div>
         </div>
       </div>
-      <figcaption class="media-caption">Model selector top-left · settings via the controls icon</figcaption>
+      <figcaption class="media-caption" id="sandboxCap">1 · Model selector, top-left</figcaption>
     </figure>
   </section>
 

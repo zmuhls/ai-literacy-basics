@@ -141,3 +141,33 @@ window.addEventListener('hashchange', function() {
 slides.forEach((s, i) => s.setAttribute('data-slide-num', i + 1));
 const m = location.hash.match(/^#(\d+)$/);
 show(m ? clamp(parseInt(m[1], 10) - 1, 0, slides.length - 1) : 0, false);
+
+// Sandbox screenshot carousel (self-contained; does not touch deck navigation)
+(function initShotCarousel() {
+  const car = document.querySelector('.shot-carousel');
+  if (!car) return;
+  const items = Array.from(car.querySelectorAll('.shot-slide'));
+  const pips = Array.from(car.querySelectorAll('.shot-pip'));
+  const cap = document.getElementById('sandboxCap');
+  const interval = parseInt(car.getAttribute('data-interval'), 10) || 5000;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let ci = 0, timer = null;
+
+  function go(i) {
+    ci = (i + items.length) % items.length;
+    items.forEach((s, k) => s.classList.toggle('is-active', k === ci));
+    pips.forEach((p, k) => {
+      p.classList.toggle('is-active', k === ci);
+      p.setAttribute('aria-selected', k === ci ? 'true' : 'false');
+    });
+    if (cap && pips[ci]) cap.textContent = pips[ci].getAttribute('data-cap');
+  }
+  function start() { if (reduce) return; stop(); timer = setInterval(() => go(ci + 1), interval); }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  pips.forEach((p, k) => p.addEventListener('click', () => { go(k); start(); }));
+  car.addEventListener('pointerenter', stop);
+  car.addEventListener('pointerleave', start);
+  go(0);
+  start();
+})();
