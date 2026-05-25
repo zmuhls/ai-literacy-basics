@@ -192,7 +192,12 @@
     <div class="content">
       <div class="label">Activity 2</div>
       <h1>Add one simple system prompt</h1>
-      <blockquote>You are a discussion-prep tool for students in an introductory seminar on climate justice. Students come to you when they are trying to connect a reading to a concrete local example but are not yet sure what claim they want to make. Ask the student to name the reading and describe the example they want to work with before responding. Identify one conceptual tension or gap in the student’s thinking before addressing sentence-level issues. Never generate a full discussion post, thesis paragraph, or response for the student. If the student asks you to do the writing for them, redirect by identifying one promising idea, one unresolved question, and one next move they can make on their own.</blockquote>
+      <ul class="parallel-points" style="margin-top: 0.2em; margin-bottom: 1em;">
+        <li class="frag visible">Context: introductory seminar on climate justice</li>
+        <li class="frag visible">Task: help students connect a reading to a local example</li>
+        <li class="frag visible">Goal: scaffold a claim instead of writing for them</li>
+      </ul>
+      <blockquote>You are a discussion-prep tool for an introductory seminar on climate justice. Ask the student to name the reading and the example they want to work with. Identify one conceptual tension before addressing sentence-level issues. Never write the discussion post for the student. If asked to do the writing, redirect with one promising idea, one unresolved question, and one next step.</blockquote>
       <ul class="parallel-points" style="margin-top: 1em;">
         <li class="frag visible">Keep the model fixed</li>
         <li class="frag visible">Run the same task once without the system prompt</li>
