@@ -184,11 +184,26 @@ section.slide.slide-title { padding: var(--header-h) 0 calc(0px + var(--footer-h
   width: min(100%, 980px);
   display: grid;
   gap: clamp(22px, 3vh, 36px);
-  padding-left: 1.18em;
+  list-style: none;
+  padding-left: 0;
   margin-top: clamp(10px, 1.8vw, 22px);
 }
 [data-slide="debrief-2"] .parallel-points li {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(10px, 1.2vw, 16px);
+  align-items: start;
   max-width: 34ch;
+  padding-top: clamp(10px, 1.2vw, 16px);
+  border-top: 1px solid color-mix(in oklab, var(--accent-warm) 36%, var(--stroke));
+}
+[data-slide="debrief-2"] .parallel-points li::before {
+  content: '?';
+  font-family: var(--font-mono);
+  color: var(--accent-warm);
+  font-size: 0.82em;
+  line-height: 1.1;
+  transform: translateY(0.1em);
 }
 [data-slide="debrief-2"] .parallel-points li:nth-child(2) {
   margin-left: var(--stagger-step);
