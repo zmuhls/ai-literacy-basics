@@ -126,6 +126,7 @@ section.slide.slide-title { padding: var(--header-h) 0 calc(0px + var(--footer-h
   margin: clamp(8px, 1vw, 14px) 0 0;
 }
 .agenda-steps li {
+  position: relative;
   display: grid;
   grid-template-rows: auto 1fr;
   align-content: start;
@@ -137,7 +138,15 @@ section.slide.slide-title { padding: var(--header-h) 0 calc(0px + var(--footer-h
   line-height: 1.08;
   color: rgba(244,248,253,0.96);
   text-wrap: balance;
+  transition: transform 0.2s ease, border-top-color 0.2s ease;
 }
+/* whole-tile link: overlay anchor turns each agenda item into a TOC jump */
+.agenda-steps a.agenda-link { position: absolute; inset: 0; z-index: 2; border-radius: 6px; -webkit-tap-highlight-color: transparent; }
+.agenda-steps a.agenda-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.agenda-steps li:hover,
+.agenda-steps li:has(.agenda-link:focus-visible) { transform: translateY(-3px); border-top-color: var(--accent-bright); }
+.agenda-steps li:hover > span,
+.agenda-steps li:has(.agenda-link:focus-visible) > span { color: var(--accent-bright); }
 .agenda-steps li:nth-child(1) { border-top-color: color-mix(in oklab, var(--accent-bright) 38%, var(--stroke)); }
 .agenda-steps li:nth-child(2) { border-top-color: color-mix(in oklab, var(--accent-warm) 42%, var(--stroke)); }
 .agenda-steps li:nth-child(3) { border-top-color: color-mix(in oklab, var(--accent) 42%, var(--stroke)); }
