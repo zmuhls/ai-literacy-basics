@@ -114,56 +114,44 @@
     </div>
     <figure class="stage figure-stage diagram-stage">
       <div class="diagram-wrap shot-wrap">
-        <div class="shot-carousel" data-interval="5000" aria-roledescription="carousel" aria-label="Sandbox interface tour">
+        <div class="shot-carousel" data-interval="7000" aria-label="Sandbox interface screenshot gallery">
           <div class="shot-stage">
-            <div class="shot-slide is-active" role="group" aria-label="1 of 3, full Sandbox interface">
+            <div class="shot-slide is-active">
               <div class="shot-frame">
-                <div class="shot-bar" aria-hidden="true">
-                  <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
-                  <span class="shot-url">chat.ailab.gc.cuny.edu</span>
-                </div>
                 <img class="shot-img" src="./images/sandbox-full-interface.png" alt="Full CUNY AI Lab Sandbox interface with the model list, chat area, controls panel, and System Prompt field visible.">
               </div>
             </div>
-            <div class="shot-slide" role="group" aria-label="2 of 3, model selector">
+            <div class="shot-slide">
               <div class="shot-frame">
-                <div class="shot-bar" aria-hidden="true">
-                  <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
-                  <span class="shot-url">chat.ailab.gc.cuny.edu</span>
-                </div>
                 <img class="shot-img" src="./images/sandbox-model-selector.png" alt="The top-left Sandbox model menu lists Gemma, GPT-OSS, Qwen, Kimi-K2.5, DeepSeek, and GLM-5.">
               </div>
             </div>
-            <div class="shot-slide" role="group" aria-label="3 of 3, controls and system prompt">
+            <div class="shot-slide">
               <div class="shot-frame">
-                <div class="shot-bar" aria-hidden="true">
-                  <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
-                  <span class="shot-url">chat.ailab.gc.cuny.edu</span>
-                </div>
                 <img class="shot-img" src="./images/sandbox-controls.png" alt="Controls panel with the System Prompt field above advanced settings.">
               </div>
             </div>
           </div>
-          <div class="shot-dots" role="tablist" aria-label="Choose a screenshot">
-            <button class="shot-pip is-active" type="button" data-cap="1 · Full interface" aria-label="Full interface" aria-selected="true"></button>
-            <button class="shot-pip" type="button" data-cap="2 · Model menu" aria-label="Model menu" aria-selected="false"></button>
-            <button class="shot-pip" type="button" data-cap="3 · Controls and system prompt" aria-label="Controls and system prompt" aria-selected="false"></button>
+          <div class="shot-dots" role="tablist" aria-label="Choose screenshot">
+            <button class="shot-pip is-active" type="button" aria-label="Full interface" aria-selected="true" data-cap="Full interface"></button>
+            <button class="shot-pip" type="button" aria-label="Model menu" aria-selected="false" data-cap="Model menu"></button>
+            <button class="shot-pip" type="button" aria-label="Controls panel" aria-selected="false" data-cap="Controls panel"></button>
           </div>
         </div>
       </div>
-      <figcaption class="media-caption" id="sandboxCap">1 · Full interface</figcaption>
     </figure>
   </section>
 
   <section class="slide placeholder-slide even-layout" data-slide="activity-1" aria-label="Compare one prompt in two models">
     <div class="content">
       <div class="label">Activity 1</div>
-      <h1>Compare the car wash prompt</h1>
+      <h1>Compare prompts</h1>
       <blockquote>“The car wash is 50 yards away. Do I walk or do I drive?”</blockquote>
       <ul class="parallel-points">
-        <li class="frag">Did it notice why you might go?</li>
-        <li class="frag">Did it ask for missing context?</li>
-        <li class="frag">Did it keep the answer practical?</li>
+        <li class="frag">Open the model selector</li>
+        <li class="frag">Choose two available models</li>
+        <li class="frag">Run the same prompt with each model</li>
+        <li class="frag">Evaluate responses across models</li>
       </ul>
     </div>
     <figure class="stage figure-stage diagram-stage">
@@ -184,7 +172,6 @@
           </div>
         </div>
       </div>
-      <figcaption class="media-caption">Same car wash prompt, two answers to compare</figcaption>
     </figure>
   </section>
 
@@ -195,7 +182,6 @@
           <div class="label">Activity 1 debrief</div>
           <h1>What did the comparison show?</h1>
         </div>
-        <p class="debrief-note">Use the two replies to talk about judgment, context, and teaching.</p>
       </div>
       <div class="debrief-board" role="list">
         <section class="debrief-question" role="listitem">
@@ -226,7 +212,7 @@
     <div class="content">
       <div class="label">System prompts</div>
       <h1>What is a system prompt?</h1>
-      <h2>Setup instructions for a specialized tool</h2>
+      <h2>Setup instructions for a language model</h2>
       <ul class="parallel-points">
         <li class="frag">What task it handles</li>
         <li class="frag">How it should operate</li>
@@ -259,17 +245,17 @@
       <h1>Set a system prompt</h1>
       <div class="activity-simple">
         <section class="activity-prompt-block">
+          <p class="activity-kicker">System prompt</p>
+          <blockquote class="activity-system-prompt">Read input twice. Do not jump to conclusions.</blockquote>
+        </section>
+        <section class="activity-prompt-block">
           <p class="activity-kicker">User prompt</p>
           <p class="activity-user-prompt">“The car wash is 50 yards away. Do I walk or do I drive?”</p>
         </section>
-        <section class="activity-prompt-block">
-          <p class="activity-kicker">System prompt</p>
-          <blockquote class="activity-system-prompt">You are a practical decision coach. Start with the goal. Ask what needs the service. If something needs the service, it has to go there. Answer in one sentence.</blockquote>
-        </section>
         <ol class="activity-steps" aria-label="Run the comparison">
-          <li>Same model</li>
-          <li>First without it</li>
-          <li>Then with it</li>
+          <li>What changed after the system prompt?</li>
+          <li>Which instruction helped?</li>
+          <li>What would you change and test next?</li>
         </ol>
       </div>
     </div>
@@ -278,20 +264,48 @@
   <section class="slide placeholder-slide crowded" data-slide="debrief-2" aria-label="Debrief system prompt comparison">
     <div class="content">
       <div class="label">Activity 2 debrief</div>
-      <h1>What did you discover?</h1>
+      <h1>Discussion questions</h1>
       <ul class="parallel-points">
-        <li class="frag visible">What did the system prompt make the model notice?</li>
-        <li class="frag visible">When did it stop treating distance as the whole problem?</li>
-        <li class="frag visible">Which words pointed it back to the car?</li>
-        <li class="frag visible">What would you make more specific next?</li>
+        <li class="frag visible">How can students learn by comparing responses and writing system prompts?</li>
+        <li class="frag visible">How could this help students read AI output more critically?</li>
+        <li class="frag visible">Could you see yourself applying these sorts of activities in your classes? If so, how?</li>
       </ul>
     </div>
   </section>
 
-  <section class="slide slide-break" data-slide="closing" aria-label="Closing takeaways">
-    <div class="content" data-numeral="11" data-panelist-num="11">
-      <div class="break-tag">Closing takeaways</div>
-      <h1>Compare models in the Sandbox. Compose setup instructions with system prompts.</h1>
+  <section class="slide placeholder-slide odd-layout" data-slide="resources" aria-label="Links and resources">
+    <div class="content">
+      <div class="label">Resources</div>
+      <h1>Links &amp; Resources</h1>
+    </div>
+    <div class="stage resources-stage">
+      <div class="res-wrap">
+        <div class="res-group">
+          <div class="res-group-title">CUNY AI Lab</div>
+          <ul class="res-list">
+            <li>
+              <a href="https://ailab.gc.cuny.edu/" target="_blank" rel="noopener">https://ailab.gc.cuny.edu</a>
+              <div class="res-desc">CUNY AI Lab</div>
+            </li>
+            <li>
+              <a href="https://chat.ailab.gc.cuny.edu/" target="_blank" rel="noopener">chat.ailab.gc.cuny.edu</a>
+              <div class="res-desc">CUNY AI Lab Sandbox</div>
+            </li>
+            <li>
+              <a href="https://tools.ailab.gc.cuny.edu/" target="_blank" rel="noopener">tools.ailab.gc.cuny.edu</a>
+              <div class="res-desc">AI tools for research, teaching, and creative work</div>
+            </li>
+            <li>
+              <a href="https://github.com/cuny-ai-lab" target="_blank" rel="noopener">github.com/cuny-ai-lab</a>
+              <div class="res-desc">Open-source projects and workshop code</div>
+            </li>
+            <li>
+              <a href="https://cuny-ai-lab.github.io/links/" target="_blank" rel="noopener">cuny-ai-lab.github.io/links</a>
+              <div class="res-desc">CUNY AI Lab examples, projects, workshops, and resources</div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 </main>
