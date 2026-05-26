@@ -148,6 +148,32 @@ section.slide.slide-title { padding: var(--header-h) 0 calc(0px + var(--footer-h
   letter-spacing: 0.16em;
   color: var(--accent-warm);
 }
+
+/* Discussion prompt: one question before entering the Sandbox. */
+[data-slide="digital-divide"] .content {
+  flex-basis: 100%;
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: clamp(20px, 3vw, 46px);
+  padding: clamp(34px, 5vw, 76px);
+  overflow: hidden;
+}
+[data-slide="digital-divide"] .content h1 {
+  max-width: 15ch;
+  font-size: clamp(42px, 5vw, 82px);
+  margin: 0;
+}
+.discussion-question {
+  align-self: center;
+  max-width: 22ch;
+  padding-top: clamp(18px, 2.4vw, 34px);
+  padding-bottom: 0.08em;
+  border-top: 1px solid color-mix(in oklab, var(--accent-warm) 46%, var(--stroke));
+  color: rgba(244,248,253,0.97);
+  font-size: clamp(30px, 3.4vw, 58px);
+  line-height: 1.14;
+  text-wrap: balance;
+}
 .slide-break.active { align-items: stretch; justify-content: stretch; overflow: hidden; padding: var(--header-h) clamp(20px,5vw,80px) calc(var(--footer-h) + 20px); background: radial-gradient(ellipse 80% 60% at 80% 100%, rgba(138,168,199,0.04), transparent 60%), linear-gradient(140deg, #0f141d 0%, #090c12 60%, var(--bg-deep) 100%); }
 .slide-break .content { background: transparent; border: none; min-height: unset; padding: clamp(22px, 3.4vh, 46px) clamp(26px, 3vw, 54px); display: grid; grid-template-columns: minmax(140px, 16%) 1fr; grid-template-rows: auto 1fr auto; gap: clamp(18px, 2.6vw, 38px) clamp(24px, 3.2vw, 56px); width: 100%; height: 100%; align-items: start; overflow: hidden; }
 .slide-break .content::before { content: attr(data-numeral); font-family: var(--font-display); font-weight: 400; font-size: clamp(72px, 9vw, 140px); line-height: 1; letter-spacing: 0; color: transparent; -webkit-text-stroke: 1px var(--accent); grid-column: 1; grid-row: 1 / span 3; align-self: center; justify-self: start; opacity: 0.46; }
