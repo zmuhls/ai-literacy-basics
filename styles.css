@@ -99,6 +99,53 @@ section.slide.slide-title { padding: var(--header-h) 0 calc(0px + var(--footer-h
 .title-card h1 { font-family: var(--font-display); font-weight: 600; font-size: clamp(58px, 8.5vw, 154px); line-height: 0.98; letter-spacing: 0; margin-bottom: 18px; max-width: 8.5ch; text-shadow: 0 4px 24px rgba(0,0,0,0.42); }
 .title-card h2 { font-family: var(--font-display); font-style: normal; font-weight: 400; font-size: clamp(22px, 2.5vw, 48px); color: rgba(236,242,248,0.9); line-height: 1.18; margin-bottom: 26px; max-width: 30ch; }
 .institution { font-family: var(--font-display); font-style: normal; font-weight: 400; font-size: clamp(14px, 1.3vw, 22px); color: rgba(236,242,248,0.78); }
+
+/* Agenda: four-part flow, not a corner bullet list. */
+[data-slide="agenda"] .content {
+  flex-basis: 100%;
+  display: grid;
+  grid-template-rows: auto auto minmax(0, 1fr);
+  gap: clamp(18px, 2.6vw, 34px);
+  padding: clamp(34px, 5vw, 76px);
+  overflow: hidden;
+}
+[data-slide="agenda"] .content h1 {
+  font-size: clamp(46px, 5.2vw, 86px);
+  margin: 0;
+}
+.agenda-steps {
+  list-style: none;
+  width: 100%;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(22px, 2.8vw, 46px);
+  padding: 0;
+  margin: clamp(8px, 1vw, 14px) 0 0;
+}
+.agenda-steps li {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-content: start;
+  gap: clamp(12px, 1.4vw, 20px);
+  padding-top: clamp(18px, 2vw, 30px);
+  border-top: 1px solid var(--stroke);
+  max-width: none;
+  font-size: clamp(30px, 3.1vw, 54px);
+  line-height: 1.08;
+  color: rgba(244,248,253,0.96);
+  text-wrap: balance;
+}
+.agenda-steps li:nth-child(1) { border-top-color: color-mix(in oklab, var(--accent-bright) 38%, var(--stroke)); }
+.agenda-steps li:nth-child(2) { border-top-color: color-mix(in oklab, var(--accent-warm) 42%, var(--stroke)); }
+.agenda-steps li:nth-child(3) { border-top-color: color-mix(in oklab, var(--accent) 42%, var(--stroke)); }
+.agenda-steps li:nth-child(4) { border-top-color: color-mix(in oklab, var(--part) 46%, var(--stroke)); }
+.agenda-steps span {
+  font-family: var(--font-mono);
+  font-size: clamp(12px, 1vw, 16px);
+  letter-spacing: 0.16em;
+  color: var(--accent-warm);
+}
 .slide-break.active { align-items: stretch; justify-content: stretch; overflow: hidden; padding: var(--header-h) clamp(20px,5vw,80px) calc(var(--footer-h) + 20px); background: radial-gradient(ellipse 80% 60% at 80% 100%, rgba(138,168,199,0.04), transparent 60%), linear-gradient(140deg, #0f141d 0%, #090c12 60%, var(--bg-deep) 100%); }
 .slide-break .content { background: transparent; border: none; min-height: unset; padding: clamp(22px, 3.4vh, 46px) clamp(26px, 3vw, 54px); display: grid; grid-template-columns: minmax(140px, 16%) 1fr; grid-template-rows: auto 1fr auto; gap: clamp(18px, 2.6vw, 38px) clamp(24px, 3.2vw, 56px); width: 100%; height: 100%; align-items: start; overflow: hidden; }
 .slide-break .content::before { content: attr(data-numeral); font-family: var(--font-display); font-weight: 400; font-size: clamp(72px, 9vw, 140px); line-height: 1; letter-spacing: 0; color: transparent; -webkit-text-stroke: 1px var(--accent); grid-column: 1; grid-row: 1 / span 3; align-self: center; justify-self: start; opacity: 0.46; }
@@ -439,6 +486,10 @@ section.slide.slide-title { padding: var(--header-h) 0 calc(0px + var(--footer-h
   .placeholder-slide .content .parallel-points { margin-top: 0.4em; }
   .placeholder-slide .content ul { gap: 0.3em; }
   .content blockquote { font-size: clamp(15px, 2.2vh, 22px); margin-top: 0.5em; margin-bottom: 0.4em; padding: 0.55em 0.85em 0.6em 0.9em; }
+  [data-slide="agenda"] .content { gap: 12px; padding: 18px 24px; }
+  [data-slide="agenda"] .content h1 { font-size: clamp(34px, 6vh, 50px); }
+  .agenda-steps { gap: 18px; }
+  .agenda-steps li { font-size: clamp(20px, 3.4vh, 32px); padding-top: 12px; }
   [data-slide="debrief-1"] .content { gap: 14px; padding: 18px 24px; }
   .debrief-content h1 { font-size: clamp(32px, 5.6vh, 48px); }
   .debrief-note { font-size: clamp(15px, 2.2vh, 20px); }
@@ -516,6 +567,20 @@ section.slide.slide-title { padding: var(--header-h) 0 calc(0px + var(--footer-h
     padding: clamp(22px, 3.6vw, 42px) 0;
     overflow: visible;
   }
+  [data-slide="agenda"] .content {
+    padding: clamp(24px, 3.8vw, 40px) 0;
+    gap: clamp(14px, 2vw, 22px);
+  }
+  [data-slide="agenda"] .content h1 {
+    font-size: clamp(42px, 7vw, 66px);
+  }
+  .agenda-steps {
+    gap: clamp(16px, 2.5vw, 28px);
+  }
+  .agenda-steps li {
+    font-size: clamp(25px, 4vw, 38px);
+    padding-top: clamp(14px, 2vw, 22px);
+  }
   .debrief-board {
     gap: clamp(18px, 2.8vw, 30px);
   }
@@ -544,6 +609,26 @@ section.slide.slide-title { padding: var(--header-h) 0 calc(0px + var(--footer-h
   .debrief-num { font-size: 10px; }
   .debrief-question h2 { font-size: clamp(24px, 6vw, 32px); }
   .debrief-question p { max-width: none; font-size: clamp(17px, 4.2vw, 21px); line-height: 1.22; }
+  [data-slide="agenda"] .content {
+    gap: 12px;
+    padding: 18px 14px 24px;
+    overflow-y: auto;
+  }
+  [data-slide="agenda"] .content h1 {
+    font-size: clamp(34px, 9vw, 48px);
+  }
+  .agenda-steps {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .agenda-steps li {
+    gap: 6px;
+    padding-top: 10px;
+    font-size: clamp(21px, 5.6vw, 28px);
+  }
+  .agenda-steps span {
+    font-size: 11px;
+  }
   .placeholder-slide .content h1 { font-size: clamp(30px, 6.2vw, 42px); }
   .placeholder-slide .content h2 { font-size: clamp(18px, 3.4vw, 26px); }
   .placeholder-slide .content li { font-size: clamp(20px, 3.8vw, 25px); line-height: 1.32; }
