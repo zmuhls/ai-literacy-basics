@@ -3,10 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teach@CUNY Summer Institute 2026 — Introduction to AI Literacy Basics</title>
+  <title>Teach@CUNY Summer Institute 2026 | AI Literacy Basics</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
@@ -15,7 +16,7 @@
 
 <header>
   <div class="bar"><span class="kbd" id="kbdSwipe">Swipe</span></div>
-  <a class="header-deck-link" href="https://chat.ailab.gc.cuny.edu/" target="_blank" rel="noopener">CAIL Sandbox</a>
+  <a class="header-deck-link" href="https://chat.ailab.gc.cuny.edu/" target="_blank" rel="noopener">CUNY AI Lab Sandbox</a>
 </header>
 
 <main aria-label="Presentation slides">
@@ -25,10 +26,9 @@
       <div class="title-overlay">
         <div class="title-card title-card-contrast">
           <div class="eyebrow">Teach@CUNY Summer Institute 2026</div>
-          <h1>Introduction to AI Literacy Basics</h1>
-          <h2>Purpose-driven experimentation with the CUNY AI Lab Sandbox</h2>
-          <p class="panelists">Zach Muhlbauer · Stefano Morello</p>
-          <p class="institution">Tuesday, May 26</p>
+          <h1>AI Literacy Basics</h1>
+          <h2>Zach Muhlbauer · Stefano Morello</h2>
+          <p class="institution">Tuesday, May 26, 2026</p>
         </div>
       </div>
     </figure>
@@ -37,12 +37,12 @@
   <section class="slide placeholder-slide crowded" data-slide="agenda" aria-label="Workshop agenda">
     <div class="content" id="slide-content">
       <div class="label">Workshop agenda</div>
-      <h1>What we’ll do in one hour</h1>
+      <h1>What we’ll do</h1>
       <ul class="parallel-points">
-        <li class="frag visible">Get introduced to the Sandbox and where its controls live</li>
-        <li class="frag visible">Try one task across two different models</li>
-        <li class="frag visible">Add one simple system prompt and run the task again</li>
-        <li class="frag visible">Compare what changed and discuss what that means for teaching</li>
+        <li class="frag visible">Start with an everyday algorithm</li>
+        <li class="frag visible">Compare two model responses</li>
+        <li class="frag visible">Set one system prompt</li>
+        <li class="frag visible">Discuss what changed after the system prompt</li>
       </ul>
     </div>
   </section>
@@ -51,33 +51,21 @@
     <div class="content">
       <div class="label">Icebreaker</div>
       <h1>Describe an algorithm you already know</h1>
-      <h2>Make procedure feel familiar before we talk about AI</h2>
+      <h2>Write a routine in three steps or fewer</h2>
       <ul class="parallel-points">
-        <li class="frag">Describe a routine as a conditional</li>
-        <li class="frag">Describe a routine as a loop</li>
-        <li class="frag">Describe a routine as a sequence</li>
-        <li class="frag">Notice that giving clear steps is already something you know how to do</li>
+        <li class="frag"><strong>If X then Y (conditional):</strong> “If it’s raining, grab an umbrella; otherwise, wear sunglasses.”</li>
+        <li class="frag"><strong>Repeat until done (loop):</strong> Wash the dishes step by step until the sink is empty.</li>
+        <li class="frag"><strong>First A then B (sequence):</strong> Preheat the oven, mix the batter, pour it into a pan, then bake.</li>
       </ul>
     </div>
     <figure class="stage figure-stage diagram-stage">
       <div class="diagram-wrap">
-        <div class="viz algo-stack" aria-label="One everyday routine — making coffee — expressed as a sequence, a conditional, and a loop.">
-          <div class="viz-eyebrow">One routine, three shapes</div>
-          <div class="algo-row">
-            <span class="algo-kind">Sequence</span>
-            <code class="algo-code"><b>grind</b> → <b>brew</b> → <b>pour</b></code>
-          </div>
-          <div class="algo-row">
-            <span class="algo-kind">Conditional</span>
-            <code class="algo-code"><b>if</b> mug is empty → refill</code>
-          </div>
-          <div class="algo-row">
-            <span class="algo-kind">Loop</span>
-            <code class="algo-code"><b>while</b> still sleepy → repeat</code>
-          </div>
+        <div class="viz icebreaker-prompt" aria-label="Icebreaker prompt">
+          <div class="viz-eyebrow">Prompt</div>
+          <p>In three steps or less, describe something you do in your everyday life and frame it as a conditional, a loop, or a sequence.</p>
         </div>
       </div>
-      <figcaption class="media-caption">Making coffee · conditional · loop · sequence</figcaption>
+      <figcaption class="media-caption">Conditional, loop, sequence</figcaption>
     </figure>
   </section>
 
@@ -85,221 +73,246 @@
     <div class="content">
       <div class="label">Concept</div>
       <h1>What is a large language model?</h1>
-      <h2>A probabilistic pattern engine for text</h2>
+      <h2>A model that predicts the next token</h2>
       <ul class="parallel-points">
-        <li class="frag">Token</li>
-        <li class="frag">Vector</li>
-        <li class="frag">Attention</li>
-        <li class="frag">Prediction</li>
+        <li class="frag">Token = piece of text</li>
+        <li class="frag">Vector = token as numbers</li>
+        <li class="frag">Attention = weighted context</li>
+        <li class="frag">Prediction = likely next token</li>
       </ul>
-      <blockquote class="frag">The model predicts likely next steps in language. It does not think like a person.</blockquote>
     </div>
     <figure class="stage figure-stage diagram-stage">
       <div class="diagram-wrap">
-        <div class="viz llm-flow" aria-label="An LLM turns tokens into vectors, mixes them with attention, scores probabilities, and emits the next token.">
-          <div class="viz-eyebrow">How text becomes a prediction</div>
-          <div class="llm-node"><span class="llm-step">01</span><span class="llm-name">Tokens</span><span class="llm-desc">text split into pieces</span></div>
+        <div class="viz llm-flow" aria-label="An LLM splits text into tokens, maps tokens to numbers, uses context, scores likely next tokens, and returns output.">
+          <div class="viz-eyebrow">Text to answer</div>
+          <div class="llm-node"><span class="llm-step">01</span><span class="llm-name">Tokens</span><span class="llm-desc">text splits into pieces</span></div>
           <div class="llm-arrow" aria-hidden="true">↓</div>
-          <div class="llm-node"><span class="llm-step">02</span><span class="llm-name">Vectors</span><span class="llm-desc">pieces become numbers</span></div>
+          <div class="llm-node"><span class="llm-step">02</span><span class="llm-name">Vectors</span><span class="llm-desc">pieces map to numbers</span></div>
           <div class="llm-arrow" aria-hidden="true">↓</div>
-          <div class="llm-node"><span class="llm-step">03</span><span class="llm-name">Attention</span><span class="llm-desc">context gets mixed in</span></div>
+          <div class="llm-node"><span class="llm-step">03</span><span class="llm-name">Attention</span><span class="llm-desc">context gets weighted</span></div>
           <div class="llm-arrow" aria-hidden="true">↓</div>
-          <div class="llm-node"><span class="llm-step">04</span><span class="llm-name">Probabilities</span><span class="llm-desc">likely next tokens scored</span></div>
+          <div class="llm-node"><span class="llm-step">04</span><span class="llm-name">Probabilities</span><span class="llm-desc">next tokens get scores</span></div>
           <div class="llm-arrow" aria-hidden="true">↓</div>
-          <div class="llm-node is-out"><span class="llm-step">05</span><span class="llm-name">Output</span><span class="llm-desc">choose one · repeat</span></div>
+          <div class="llm-node is-out"><span class="llm-step">05</span><span class="llm-name">Output</span><span class="llm-desc">one token appears, then repeats</span></div>
         </div>
       </div>
-      <figcaption class="media-caption">Tokens → vectors → attention → output</figcaption>
+      <figcaption class="media-caption">Tokens, vectors, output</figcaption>
     </figure>
-  </section>
-
-  <section class="slide placeholder-slide crowded" data-slide="variables" aria-label="What changes output?">
-    <div class="content">
-      <div class="label">Framework</div>
-      <h1>What changes output?</h1>
-      <ul class="parallel-points">
-        <li class="frag visible">Model</li>
-        <li class="frag visible">System prompt</li>
-        <li class="frag visible">User prompt</li>
-      </ul>
-      <blockquote class="frag visible">These are the three levers we’ll vary in today’s workshop.</blockquote>
-    </div>
   </section>
 
   <section class="slide placeholder-slide odd-layout" data-slide="sandbox" aria-label="Access the Sandbox">
     <div class="content">
       <div class="label">Sandbox setup</div>
       <h1>Access the Sandbox</h1>
-      <h2>Get everyone into the same interface before comparing anything</h2>
+      <h2>Start with a fresh chat</h2>
       <ul class="parallel-points">
-        <li class="frag">Go to chat.ailab.gc.cuny.edu</li>
-        <li class="frag">Sign in with CUNY credentials</li>
-        <li class="frag">Start a fresh conversation</li>
-        <li class="frag">Locate the model selector and settings area</li>
+        <li class="frag">Open <a href="https://chat.ailab.gc.cuny.edu/" target="_blank" rel="noopener">chat.ailab.gc.cuny.edu</a></li>
+        <li class="frag">Sign in with your CUNY account</li>
+        <li class="frag">Open a new chat</li>
+        <li class="frag">Find the model menu and controls</li>
       </ul>
     </div>
     <figure class="stage figure-stage diagram-stage">
       <div class="diagram-wrap shot-wrap">
         <div class="shot-carousel" data-interval="5000" aria-roledescription="carousel" aria-label="Sandbox interface tour">
           <div class="shot-stage">
-            <div class="shot-slide is-active" role="group" aria-label="1 of 2: Model selector">
+            <div class="shot-slide is-active" role="group" aria-label="1 of 3, full Sandbox interface">
               <div class="shot-frame">
                 <div class="shot-bar" aria-hidden="true">
                   <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
                   <span class="shot-url">chat.ailab.gc.cuny.edu</span>
                 </div>
-                <img class="shot-img" src="./images/sandbox-model-selector.png" alt="The Sandbox model selector open at the top-left, listing models including Gemma, GPT-OSS, Qwen, Kimi-K2.5, DeepSeek and GLM-5.">
+                <img class="shot-img" src="./images/sandbox-full-interface.png" alt="Full CUNY AI Lab Sandbox interface with the model list, chat area, controls panel, and System Prompt field visible.">
               </div>
             </div>
-            <div class="shot-slide" role="group" aria-label="2 of 2: Controls and system prompt">
+            <div class="shot-slide" role="group" aria-label="2 of 3, model selector">
               <div class="shot-frame">
                 <div class="shot-bar" aria-hidden="true">
                   <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
                   <span class="shot-url">chat.ailab.gc.cuny.edu</span>
                 </div>
-                <img class="shot-img" src="./images/sandbox-controls.png" alt="The Controls panel opened from the controls icon, showing the System Prompt field above the advanced parameters.">
+                <img class="shot-img" src="./images/sandbox-model-selector.png" alt="The top-left Sandbox model menu lists Gemma, GPT-OSS, Qwen, Kimi-K2.5, DeepSeek, and GLM-5.">
+              </div>
+            </div>
+            <div class="shot-slide" role="group" aria-label="3 of 3, controls and system prompt">
+              <div class="shot-frame">
+                <div class="shot-bar" aria-hidden="true">
+                  <span class="shot-dot"></span><span class="shot-dot"></span><span class="shot-dot"></span>
+                  <span class="shot-url">chat.ailab.gc.cuny.edu</span>
+                </div>
+                <img class="shot-img" src="./images/sandbox-controls.png" alt="Controls panel with the System Prompt field above advanced settings.">
               </div>
             </div>
           </div>
           <div class="shot-dots" role="tablist" aria-label="Choose a screenshot">
-            <button class="shot-pip is-active" type="button" data-cap="1 · Model selector, top-left" aria-label="Model selector" aria-selected="true"></button>
-            <button class="shot-pip" type="button" data-cap="2 · Settings via the controls icon" aria-label="Controls and system prompt" aria-selected="false"></button>
+            <button class="shot-pip is-active" type="button" data-cap="1 · Full interface" aria-label="Full interface" aria-selected="true"></button>
+            <button class="shot-pip" type="button" data-cap="2 · Model menu" aria-label="Model menu" aria-selected="false"></button>
+            <button class="shot-pip" type="button" data-cap="3 · Controls and system prompt" aria-label="Controls and system prompt" aria-selected="false"></button>
           </div>
         </div>
       </div>
-      <figcaption class="media-caption" id="sandboxCap">1 · Model selector, top-left</figcaption>
+      <figcaption class="media-caption" id="sandboxCap">1 · Full interface</figcaption>
     </figure>
   </section>
 
-  <section class="slide placeholder-slide even-layout" data-slide="activity-1" aria-label="Compare two models on the same task">
+  <section class="slide placeholder-slide even-layout" data-slide="activity-1" aria-label="Compare one prompt in two models">
     <div class="content">
       <div class="label">Activity 1</div>
-      <h1>Compare two models on the same task</h1>
-      <blockquote>“Explain photosynthesis to a first-year student in 120 words.”</blockquote>
+      <h1>Compare the car wash prompt</h1>
+      <blockquote>“The car wash is 50 yards away. Do I walk or do I drive?”</blockquote>
       <ul class="parallel-points">
-        <li class="frag">Compare tone</li>
-        <li class="frag">Compare specificity</li>
-        <li class="frag">Compare confidence</li>
-        <li class="frag">Compare usefulness</li>
+        <li class="frag">Did it notice why you might go?</li>
+        <li class="frag">Did it ask for missing context?</li>
+        <li class="frag">Did it keep the answer practical?</li>
       </ul>
     </div>
     <figure class="stage figure-stage diagram-stage">
       <div class="diagram-wrap">
-        <div class="viz vs-grid" aria-label="The same photosynthesis prompt sent to two different models produces two different answers to compare.">
-          <div class="vs-task"><span class="vs-task-tag">Same prompt</span>“Explain photosynthesis … in 120 words.”</div>
+        <div class="viz vs-grid" aria-label="The same car wash prompt sent to two models produces different answers to compare.">
+          <div class="vs-task"><span class="vs-task-tag">Same prompt</span>“The car wash is 50 yards away. Do I walk or do I drive?”</div>
           <div class="vs-cols">
             <div class="vs-col">
               <span class="vs-name">Model A</span>
-              <span class="vs-line w90"></span><span class="vs-line w70"></span><span class="vs-line w80"></span>
+              <p class="vs-answer">Walk. Fifty yards is close.</p>
+              <p class="vs-note">Treats distance as the whole question.</p>
             </div>
             <div class="vs-col">
               <span class="vs-name">Model B</span>
-              <span class="vs-line w80"></span><span class="vs-line w90"></span><span class="vs-line w60"></span>
+              <p class="vs-answer">Drive if you are washing the car. Walk if you are just going there.</p>
+              <p class="vs-note">Notices the purpose changes the answer.</p>
             </div>
           </div>
         </div>
       </div>
-      <figcaption class="media-caption">Same task · two models · compare the answers</figcaption>
+      <figcaption class="media-caption">Same car wash prompt, two answers to compare</figcaption>
     </figure>
   </section>
 
   <section class="slide placeholder-slide crowded" data-slide="debrief-1" aria-label="Debrief model comparison">
-    <div class="content">
-      <div class="label">Activity 1 debrief</div>
-      <h1>What changed across models?</h1>
-      <ul class="parallel-points">
-        <li class="frag visible">Which model felt clearer?</li>
-        <li class="frag visible">Which model felt more cautious?</li>
-        <li class="frag visible">Which model felt more useful for teaching?</li>
-        <li class="frag visible">What changed even though the task stayed the same?</li>
-      </ul>
+    <div class="content debrief-content">
+      <div class="debrief-top">
+        <div>
+          <div class="label">Activity 1 debrief</div>
+          <h1>What did the comparison show?</h1>
+        </div>
+        <p class="debrief-note">Use the two replies to talk about judgment, context, and teaching.</p>
+      </div>
+      <div class="debrief-board" role="list">
+        <section class="debrief-question" role="listitem">
+          <span class="debrief-num">01</span>
+          <h2>Notice</h2>
+          <p>What did each model pay attention to?</p>
+        </section>
+        <section class="debrief-question" role="listitem">
+          <span class="debrief-num">02</span>
+          <h2>Missing</h2>
+          <p>What context did the answer need?</p>
+        </section>
+        <section class="debrief-question" role="listitem">
+          <span class="debrief-num">03</span>
+          <h2>Teach</h2>
+          <p>Where could this help students read an AI answer more carefully?</p>
+        </section>
+        <section class="debrief-question" role="listitem">
+          <span class="debrief-num">04</span>
+          <h2>Try</h2>
+          <p>What would you change in the next prompt?</p>
+        </section>
+      </div>
     </div>
   </section>
 
   <section class="slide placeholder-slide odd-layout" data-slide="system-prompt" aria-label="What is a system prompt?">
     <div class="content">
-      <div class="label">System prompting basics</div>
+      <div class="label">System prompts</div>
       <h1>What is a system prompt?</h1>
-      <h2>A durable instruction shaping the whole exchange</h2>
+      <h2>Setup instructions for a specialized tool</h2>
       <ul class="parallel-points">
-        <li class="frag">User prompt = what you type in the moment</li>
-        <li class="frag">System prompt = the persistent setup instruction</li>
-        <li class="frag">Changing the system prompt changes behavior, not just style</li>
+        <li class="frag">What task it handles</li>
+        <li class="frag">How it should operate</li>
+        <li class="frag">What guardrails to follow</li>
+        <li class="frag">What’s out of scope</li>
       </ul>
     </div>
     <figure class="stage figure-stage diagram-stage">
       <div class="diagram-wrap">
-        <div class="viz curtain-diagram" aria-label="The system prompt sits hidden above a curtain; the student only sees their message and the model's reply below it.">
+        <div class="viz curtain-diagram" aria-label="A system prompt is setup instructions before the user types. The model response is shaped by the hidden system prompt.">
           <div class="curtain-hidden">
-            <span class="curtain-tag">Hidden · set once</span>
-            <div class="curtain-sys">System prompt — “You are a discussion-prep tool. Ask before you answer.”</div>
+            <span class="curtain-tag">Set before the chat</span>
+            <div class="curtain-sys">System prompt “You are a writing scaffold...”</div>
           </div>
-          <div class="curtain-line" aria-hidden="true"><span>student never sees above</span></div>
+          <div class="curtain-line" aria-hidden="true"><span>then the user types</span></div>
           <div class="curtain-visible">
             <div class="curtain-msg is-user">User · “I’m stuck on my intro…”</div>
-            <div class="curtain-model">AI model — shaped by the hidden prompt</div>
-            <div class="curtain-msg is-ai">Reply · “What claim should your reader meet first?”</div>
+            <div class="curtain-model">Shaped by hidden system prompt</div>
+            <div class="curtain-msg is-ai">Reply · “What’s the main argument you want your reader to encounter first?”</div>
           </div>
         </div>
       </div>
-      <figcaption class="media-caption">System prompt shapes every turn · user prompt is just this turn</figcaption>
+      <figcaption class="media-caption">System prompt shapes the response across the conversation.</figcaption>
     </figure>
   </section>
 
-  <section class="slide placeholder-slide crowded" data-slide="activity-2" aria-label="Add one simple system prompt">
+  <section class="slide placeholder-slide crowded" data-slide="activity-2" aria-label="Set a system prompt">
     <div class="content">
       <div class="label">Activity 2</div>
-      <h1>Add one simple system prompt</h1>
-      <ul class="parallel-points" style="margin-top: 0.2em; margin-bottom: 1em;">
-        <li class="frag visible">Context: introductory seminar on climate justice</li>
-        <li class="frag visible">Task: help students connect a reading to a local example</li>
-        <li class="frag visible">Goal: scaffold a claim instead of writing for them</li>
-      </ul>
-      <blockquote>You are a discussion-prep tool for an introductory seminar on climate justice. Ask the student to name the reading and the example they want to work with. Identify one conceptual tension before addressing sentence-level issues. Never write the discussion post for the student. If asked to do the writing, redirect with one promising idea, one unresolved question, and one next step.</blockquote>
-      <ul class="parallel-points">
-        <li class="frag visible">Keep the model fixed</li>
-        <li class="frag visible">Run the same task once without the system prompt</li>
-        <li class="frag visible">Run it again with the system prompt</li>
-      </ul>
+      <h1>Set a system prompt</h1>
+      <div class="activity-simple">
+        <section class="activity-prompt-block">
+          <p class="activity-kicker">User prompt</p>
+          <p class="activity-user-prompt">“The car wash is 50 yards away. Do I walk or do I drive?”</p>
+        </section>
+        <section class="activity-prompt-block">
+          <p class="activity-kicker">System prompt</p>
+          <blockquote class="activity-system-prompt">You are a practical decision coach. Start with the goal. Ask what needs the service. If something needs the service, it has to go there. Answer in one sentence.</blockquote>
+        </section>
+        <ol class="activity-steps" aria-label="Run the comparison">
+          <li>Same model</li>
+          <li>First without it</li>
+          <li>Then with it</li>
+        </ol>
+      </div>
     </div>
   </section>
 
   <section class="slide placeholder-slide crowded" data-slide="debrief-2" aria-label="Debrief system prompt comparison">
     <div class="content">
       <div class="label">Activity 2 debrief</div>
-      <h1>What did the system prompt change?</h1>
+      <h1>What did you discover?</h1>
       <ul class="parallel-points">
-        <li class="frag visible">What changed in tone?</li>
-        <li class="frag visible">What changed in structure?</li>
-        <li class="frag visible">Which version better supported student thinking?</li>
+        <li class="frag visible">What did the system prompt make the model notice?</li>
+        <li class="frag visible">When did it stop treating distance as the whole problem?</li>
+        <li class="frag visible">Which words pointed it back to the car?</li>
+        <li class="frag visible">What would you make more specific next?</li>
       </ul>
     </div>
   </section>
 
   <section class="slide slide-break" data-slide="closing" aria-label="Closing takeaways">
-    <div class="content" data-numeral="12" data-panelist-num="12">
+    <div class="content" data-numeral="11" data-panelist-num="11">
       <div class="break-tag">Closing takeaways</div>
-      <h1>Model choice matters. System prompts shape behavior. The Sandbox supports comparison, not just chat.</h1>
-      <p class="break-note">Next steps: system prompting · knowledge collections · AI Toolkit</p>
+      <h1>Compare models in the Sandbox. Compose setup instructions with system prompts.</h1>
     </div>
   </section>
 </main>
 
 <div class="sticky-footer">
   <div class="footer-slider">
-    <img class="footer-logo" src="./images/logo-horizontal.png" alt="Teaching and Learning Center logo">
+    <a class="footer-logo-link" href="https://cuny-ai-lab.github.io/" target="_blank" rel="noopener" aria-label="CUNY AI Lab">
+      <img class="footer-logo" src="./images/logo-horizontal.png" alt="CUNY AI Lab">
+    </a>
     <button id="btn-prev" class="footer-arrow" aria-label="Previous slide">←</button>
     <div class="slider-track">
       <div class="slider-progress"></div>
       <div class="slider-thumb"></div>
-      <input id="slide-scrubber" type="range" aria-label="Navigate to slide">
+      <input id="slide-scrubber" type="range" aria-label="Choose slide">
     </div>
     <button id="btn-next" class="footer-arrow" aria-label="Next slide">→</button>
     <button id="btn-fullscreen" class="footer-arrow" aria-label="Toggle fullscreen">⛶</button>
     <div class="footer-meta">
       <span id="slider-counter">1 / 12</span>
       <span class="kbd">Space</span>
-      <a class="footer-deck-link" href="https://chat.ailab.gc.cuny.edu/" target="_blank" rel="noopener">CAIL Sandbox</a>
+      <a class="footer-deck-link" href="https://chat.ailab.gc.cuny.edu/" target="_blank" rel="noopener">CUNY AI Lab Sandbox</a>
     </div>
   </div>
 </div>
