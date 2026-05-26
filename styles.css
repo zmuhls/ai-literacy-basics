@@ -303,6 +303,19 @@ section.slide.slide-title { padding: var(--header-h) 0 calc(0px + var(--footer-h
   text-wrap: pretty;
 }
 
+/* Bridge — step-by-step thinking forks into two payoffs */
+.bridge-viz { justify-content: center; gap: clamp(12px, 2vh, 22px); max-width: 640px; margin: 0 auto; }
+.bridge-source { align-self: start; font-family: var(--font-mono); font-size: clamp(13px, 1.35vw, 18px); letter-spacing: 0.06em; color: rgba(244,248,253,0.96); padding-bottom: clamp(8px, 1.2vh, 12px); border-bottom: 1px solid var(--stroke); }
+.bridge-fork { color: var(--accent); opacity: 0.5; font-size: clamp(13px, 1.3vw, 18px); line-height: 0.4; }
+.bridge-pair { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(14px, 1.7vw, 24px); }
+.bridge-card { padding-left: clamp(13px, 1.5vw, 20px); border-left: 2px solid var(--stroke); }
+.bridge-card:nth-child(1) { border-left-color: color-mix(in oklab, var(--accent-bright) 55%, transparent); }
+.bridge-card:nth-child(2) { border-left-color: color-mix(in oklab, var(--accent-warm) 58%, transparent); }
+.bridge-kind { display: block; font-family: var(--font-mono); font-size: clamp(11px, 1vw, 14px); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: clamp(5px, 0.8vh, 9px); }
+.bridge-card:nth-child(1) .bridge-kind { color: var(--accent-bright); }
+.bridge-card:nth-child(2) .bridge-kind { color: var(--accent-warm); }
+.bridge-card p { font-size: clamp(15px, 1.45vw, 21px); line-height: 1.28; color: rgba(236,242,248,0.92); text-wrap: pretty; }
+
 /* LLM — vertical token→output pipeline */
 .llm-flow { gap: clamp(2px, 0.5vh, 6px); align-items: stretch; }
 .llm-node { display: grid; grid-template-columns: auto 1fr; column-gap: clamp(10px, 1.2vw, 16px); align-items: center; padding: clamp(7px, 1.2vh, 13px) 0 clamp(7px, 1.2vh, 13px) clamp(12px, 1.4vw, 18px); border: none; border-left: 1px solid var(--stroke); border-radius: 0; background: transparent; }
