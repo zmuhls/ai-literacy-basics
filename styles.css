@@ -153,8 +153,8 @@ section.slide.slide-title { padding: var(--header-h) 0 calc(0px + var(--footer-h
 [data-slide="digital-divide"] .content {
   flex-basis: 100%;
   display: grid;
-  grid-template-rows: auto auto minmax(0, 1fr);
-  gap: clamp(20px, 3vw, 46px);
+  grid-template-rows: auto auto minmax(0, auto) auto;
+  gap: clamp(18px, 2.5vw, 38px);
   padding: clamp(34px, 5vw, 76px);
   overflow: hidden;
 }
@@ -172,6 +172,13 @@ section.slide.slide-title { padding: var(--header-h) 0 calc(0px + var(--footer-h
   color: rgba(244,248,253,0.97);
   font-size: clamp(30px, 3.4vw, 58px);
   line-height: 1.14;
+  text-wrap: balance;
+}
+.discussion-followup {
+  max-width: 24ch;
+  color: var(--muted);
+  font-size: clamp(22px, 2.2vw, 36px);
+  line-height: 1.18;
   text-wrap: balance;
 }
 
