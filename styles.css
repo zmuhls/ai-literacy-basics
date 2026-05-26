@@ -694,8 +694,8 @@ section.slide.slide-title { padding: var(--header-h) 0 calc(0px + var(--footer-h
   .debrief-top { display: block; padding-bottom: 12px; }
   .debrief-content h1 { font-size: clamp(30px, 7vw, 42px); max-width: none; }
   .debrief-note { margin-top: 8px; font-size: clamp(16px, 3.5vw, 20px); max-width: none; }
-  .debrief-board { grid-template-columns: 1fr; gap: 10px; }
-  .debrief-question { padding: 13px 15px; gap: 5px; }
+  .debrief-board { grid-template-columns: 1fr; grid-template-rows: none; gap: 10px; }
+  .debrief-question { padding: 13px 15px; gap: 5px; overflow: visible; }
   .debrief-num { font-size: 10px; }
   .debrief-question h2 { font-size: clamp(24px, 6vw, 32px); }
   .debrief-question p { max-width: none; font-size: clamp(17px, 4.2vw, 21px); line-height: 1.22; }
